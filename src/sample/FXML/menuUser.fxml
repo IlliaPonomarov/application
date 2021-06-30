@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="1000.0" minWidth="1200.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <AnchorPane layoutX="-12.0" minHeight="1000.0" minWidth="1200.0" prefHeight="1000.0" prefWidth="1212.0" style="-fx-background-color: white; -fx-border-color: black;">
+         <children>
+            <Text layoutX="545.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HI USER" textAlignment="CENTER" wrappingWidth="304.13671875">
+               <font>
+                  <Font name="Calibri Light" size="48.0" />
+               </font>
+            </Text>
+            <Button fx:id="btnSignOutUser" layoutX="1095.0" layoutY="38.0" mnemonicParsing="false" onAction="#clickUser" style="-fx-background-color: white; -fx-border-color: black;" text="Sign Out" />
+            <Line endX="100.0" endY="-1.0" fill="BLACK" layoutX="169.0" layoutY="28.0" startX="100.0" startY="978.0" strokeWidth="2.0" />
+            <Line endX="263.5" endY="122.0" layoutX="193.0" layoutY="159.0" startX="263.5" startY="215.0" />
+            <Line endX="263.5" endY="142.0" layoutX="192.0" layoutY="267.0" startX="263.5" startY="232.0" />
+            <Line endX="376.0" endY="232.0" layoutX="192.0" layoutY="266.0" startX="263.5" startY="232.0" strokeWidth="1.5" />
+            <Line endX="376.0" endY="232.0" layoutX="557.0" layoutY="265.0" startX="263.5" startY="232.0" strokeWidth="1.5" />
+            <Line endX="263.5" endY="142.0" layoutX="670.0" layoutY="267.0" startX="263.5" startY="232.0" />
+            <Line endX="263.5" endY="142.0" layoutX="672.0" layoutY="138.0" startX="263.5" startY="232.0" />
+            <Line endX="366.0" endY="182.0" layoutX="203.0" layoutY="95.0" startX="255.0" startY="182.5" strokeWidth="1.5" />
+            <Line endX="366.0" endY="182.0" layoutX="567.0" layoutY="98.0" startX="255.0" startY="182.5" strokeWidth="1.5" />
+            <MenuBar prefHeight="27.0" prefWidth="1212.0" style="-fx-background-color: white; -fx-border-color: black;">
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Edit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <Button layoutX="6.0" layoutY="258.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="262.0" style="-fx-background-color: white; -fx-border-color: black;" text="List of items">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <Button layoutX="6.0" layoutY="325.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="262.0" style="-fx-background-color: white; -fx-border-color: black;" text="Supplier List">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <Text fill="WHITE" layoutX="31.0" layoutY="126.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Company" textAlignment="CENTER" wrappingWidth="212.0">
+               <font>
+                  <Font name="Calibri Light Italic" size="53.0" />
+               </font>
+            </Text>
+            <Text layoutX="6.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item/ Supplier management" textAlignment="CENTER" wrappingWidth="262.0">
+               <font>
+                  <Font name="Calibri Bold Italic" size="17.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
