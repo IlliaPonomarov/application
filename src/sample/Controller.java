@@ -42,6 +42,14 @@ public class Controller {
     Model mod = new Model();
     MainView view = new MainView();
 
+    //Back Button (List of Items and Supplier
+
+    @FXML
+    Button btnBackList = new Button();
+    Button btnBackAdd = new Button();
+    Button btnBackRemove = new Button();
+    Button btnBackChange = new Button();
+
     // Authorization Button
 
     @FXML
@@ -60,7 +68,11 @@ public class Controller {
     //  Menu Button
 
     @FXML
-    Button btnList = new Button();
+    Button btnListUser = new Button();
+    @FXML
+    Button btnListAdmin = new Button();
+    @FXML
+    Button btnListSysAdmin = new Button();
 
 
     @FXML
@@ -123,15 +135,31 @@ public class Controller {
     //---------------------------------------------------------------------
 
 
-    public void clickList(){
+    public void clickListUser(){
 
-        btnList.setOnAction(event -> {
-            view.listOf();
+        btnListUser.setOnAction(event -> {
+            view.listOfUs();
+            System.out.println("HI");
             ((Node) (event.getSource())).getScene().getWindow().hide();
         });
     }
 
+    public void clickListAdmin(){
 
+        btnListAdmin.setOnAction(event -> {
+            view.listOfAd();
+            System.out.println("HI");
+            ((Node) (event.getSource())).getScene().getWindow().hide();
+        });
+    }
+    public void clickListSys(){
+
+        btnListSysAdmin.setOnAction(event -> {
+            view.listOfSys();
+            System.out.println("HI");
+            ((Node) (event.getSource())).getScene().getWindow().hide();
+        });
+    }
     //---------------------------------------------------------------------
     //                      BACK BUTTON
     //---------------------------------------------------------------------
@@ -165,6 +193,31 @@ public class Controller {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        });
+    }
+
+    public void clickBackUserListof(){
+
+        btnBackList.setOnAction(event -> {
+            view.meniUser();
+
+            ((Node) (event.getSource())).getScene().getWindow().hide();
+        });
+    }
+    public void clickBackAdminListof(){
+
+        btnBackList.setOnAction(event -> {
+            view.menuAdmin();
+
+            ((Node) (event.getSource())).getScene().getWindow().hide();
+        });
+    }
+    public void clickBackSysAdminListof(){
+
+        btnBackList.setOnAction(event -> {
+            view.menuSystemAdmin();
+
+            ((Node) (event.getSource())).getScene().getWindow().hide();
         });
     }
 

@@ -95,14 +95,52 @@ public class MainView extends  Application{
     }
 
 
-    public void listOf(){
+    public void listOfUs(){
         Parent root;
         try {
-            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("FXML/listOfItemsSupplier.fxml"));
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("FXML/userFXML/listOfItemsSupplier.fxml"));
             root = myLoader.load();
             Stage stage = new Stage();
             stage.getIcons().add(new Image("file:///D:/iconsApplication/icons8.png"));
-            stage.setTitle("User");
+            stage.setTitle("List of Items and Supplier ");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.show();
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void listOfAd(){
+        Parent root;
+        try {
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("FXML/adminFXML/listOfItemsSupplier.fxml"));
+            root = myLoader.load();
+            Stage stage = new Stage();
+            stage.getIcons().add(new Image("file:///D:/iconsApplication/icons8.png"));
+            stage.setTitle("List of Items and Supplier ");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.show();
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void listOfSys(){
+        Parent root;
+        try {
+            FXMLLoader myLoader = new FXMLLoader(getClass().getResource("FXML/sysAdminFXML/listOfItemsSupplier.fxml"));
+            root = myLoader.load();
+            Stage stage = new Stage();
+            stage.getIcons().add(new Image("file:///D:/iconsApplication/icons8.png"));
+            stage.setTitle("List of Items and Supplier ");
             stage.setResizable(false);
             stage.setScene(new Scene(root));
             stage.show();

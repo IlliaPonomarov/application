@@ -47,7 +47,7 @@
                   </Menu>
                </menus>
             </MenuBar>
-            <Button layoutX="6.0" layoutY="258.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="270.0" style="-fx-background-color: white; -fx-border-color: black;" text="List of items / Supplier">
+            <Button fx:id="btnListUser" onAction="#clickListUser" layoutX="6.0" layoutY="258.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="270.0" style="-fx-background-color: white; -fx-border-color: black;" text="List of items / Supplier">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Button>

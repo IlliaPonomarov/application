@@ -10,7 +10,7 @@
    <children>
       <AnchorPane minHeight="1000.0" minWidth="1200.0" prefHeight="1212.0" prefWidth="1000.0" style="-fx-background-color: white; -fx-border-color: black;">
          <children>
-            <Button fx:id="btnList" layoutX="1057.0" layoutY="31.0" mnemonicParsing="false" onAction="#clickList" prefHeight="37.0" prefWidth="105.0" style="-fx-background-color: white; -fx-border-color: black;" text="Back">
+            <Button fx:id="btnBackList" layoutX="1057.0" layoutY="31.0" mnemonicParsing="false" onAction="#clickBackSysAdminListof" prefHeight="37.0" prefWidth="105.0" style="-fx-background-color: white; -fx-border-color: black;" text="Back">
                <font>
                   <Font name="Calibri Light" size="17.0" />
                </font>
