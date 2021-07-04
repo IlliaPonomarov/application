@@ -113,6 +113,15 @@ public class Model {
         System.out.println(login);
         System.out.println(password);
 
+        //interface AccessLevel
+        AccessLevel sysAdmin = new SysAdmin();
+        AccessLevel user = new User();
+        AccessLevel admin = new Admin();
+
+        int userInterface = user.getAccessLevel();
+        int adminInterface = admin.getAccessLevel();
+        int sysAdminInterface = sysAdmin.getAccessLevel();
+
 
         boolean chLoginAdmin = false;
         boolean chPasswordAdmin = false;
@@ -163,17 +172,10 @@ public class Model {
                 chPasswordAdmin  = false;
                 chLoginAdmin = false;
                 System.out.println("Авторизация прошла успешно !" +  "  " + itemAdmin.getValue());
-                return 2;
-
+                return adminInterface;
             }
-
-
             count++;
         }
-
-//        System.out.printf("----------------------------------------------------------------\n" +
-//                "----------------------------------------------------------------\n\n");
-//        System.out.println("System Admin Data: " + '\n');
 
 
 
@@ -181,19 +183,16 @@ public class Model {
             switch (count2){
                 case 1:
                     name = itemSysAdmin.getValue();
-                    //System.out.printf("Name: %s\n", itemSysAdmin.getValue());
                     break;
                 case 2:
                     surname = itemSysAdmin.getValue();
-                    //System.out.printf("Surname: %s\n", itemSysAdmin.getValue());
+
                     break;
                 case 3:
                     login1 = itemSysAdmin.getValue();
-                    //System.out.printf("Login: %s\n", itemSysAdmin.getValue());
                     break;
                 case 4:
                     password1 = itemSysAdmin.getValue();
-                 //  System.out.printf("Password: %s\n", itemSysAdmin.getValue());
                     sysAdminLinkedList.add(new SysAdmin(name, surname, login1, password1));
                     break;
                 case 5:
@@ -211,19 +210,12 @@ public class Model {
             if (chLoginSysAdmin == true && chPasswordSysAdmin == true) {
                 chPasswordSysAdmin  = false;
                 chLoginSysAdmin = false;
-               // System.out.println("Авторизация прошла успешно !" + "  " + itemSysAdmin.getValue());
-                return 1;
+                return sysAdminInterface;
             }
-
             count2++;
-
-
         }
 
 
-//        System.out.printf("----------------------------------------------------------------\n" +
-//                "----------------------------------------------------------------\n\n");
-//        System.out.println("Users: " + '\n');
         for (Map.Entry<Integer, String> itemUsers : usersList.entrySet()){
 
             switch (count3){
@@ -260,7 +252,7 @@ public class Model {
                 chPasswordUser  = false;
                 chLoginUser = false;
               //  System.out.println("Авторизация прошла успешно !"  + "  " + itemUsers.getValue());
-                return 3;
+                return userInterface;
             }
             count3++;
         }

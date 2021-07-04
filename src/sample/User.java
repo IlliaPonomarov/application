@@ -1,22 +1,23 @@
 package sample;
 
+interface AccessLevel {
+    public byte getAccessLevel();
+}
 
-public class User {
-
+abstract class Person{
     private String name;
     private String surname;
     private String login;
     private String password;
 
+    public Person() {
+    }
 
-    private byte accessLevel = 3;
-
-    public User(String name, String surname, String login, String password) {
+    public Person(String name, String surname, String login, String password) {
         this.name = name;
         this.surname = surname;
         this.login = login;
         this.password = password;
-
     }
 
     public String getName() {
@@ -50,57 +51,59 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+}
+public class User extends Person implements AccessLevel {
 
+    public User() {
+    }
+    private final byte accessLevel = 3;
+
+    public User(String name, String surname, String login, String password) {
+        super(name, surname, login, password);
+
+    }
     public byte getAccessLevel() {
         return accessLevel;
     }
 
-    public void setAccessLevel(byte accessLevel) {
-        this.accessLevel = accessLevel;
-    }
 }
 
 
 
 
 
-class Admin extends User{
+class Admin extends Person implements AccessLevel{
 
-    private byte accessLevel = 2;
+    private final byte accessLevel = 2;
+
+    public Admin() {
+    }
 
     public Admin(String name, String surname, String login, String password) {
         super(name, surname, login, password);
 
     }
-
-    @Override
     public byte getAccessLevel() {
         return accessLevel;
     }
 
-    @Override
-    public void setAccessLevel(byte accessLevel) {
-        this.accessLevel = accessLevel;
-    }
 }
 
 
-class SysAdmin extends User{
+class SysAdmin extends Person implements AccessLevel{
 
-    private byte accessLevel = 1;
+    public SysAdmin(){}
+
+    private final byte accessLevel = 1;
 
     public SysAdmin(String name, String surname, String login, String password) {
         super(name, surname, login, password);
 
     }
 
-    @Override
     public byte getAccessLevel() {
         return accessLevel;
     }
 
-    @Override
-    public void setAccessLevel(byte accessLevel) {
-        this.accessLevel = accessLevel;
-    }
+
 }
