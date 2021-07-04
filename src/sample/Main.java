@@ -37,10 +37,6 @@ public class Main extends Application {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        Model model = new Model() ;
-        Controller check = new Controller();
-
-
        Application.launch(args);
     }
 }

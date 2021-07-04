@@ -1,8 +1,6 @@
 package sample;
 
-
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import sun.reflect.generics.tree.Tree;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -11,6 +9,7 @@ import java.util.*;
 public class Model {
 
    protected static int Authorization(String login2, String password2) throws FileNotFoundException {
+
         HashMap<Integer, String> adminHashMap = new HashMap<Integer,String>();
         HashMap<Integer, String> sysAdminHashMap = new HashMap<Integer,String>();
         HashMap<Integer, String> usersHashMap = new HashMap<Integer,String>();
@@ -34,27 +33,82 @@ public class Model {
         int g = 0;
 
 
-
-
         //Добвляем в коллекцию данные с файла
 
-        while (scanAdmin.hasNextLine()){
+        while (scanAdmin.hasNextLine())
             adminHashMap.put(i++,scanAdmin.nextLine());
-        }
 
-        while (scanSysAdmin.hasNextLine()){
+
+        while (scanSysAdmin.hasNextLine())
             sysAdminHashMap.put(l++,scanSysAdmin.nextLine());
-        }
 
-        while (scanUsers.hasNextLine()){
+
+        while (scanUsers.hasNextLine())
             usersHashMap.put(m++,scanUsers.nextLine());
-        }
+
 
         //Проверяем введенные данные
         g = dataFilling(login2, password2, adminHashMap, sysAdminHashMap, usersHashMap, userLinkedList, adminLinkedList, sysAdminLinkedList);
        // printLinkedList( userLinkedList, adminLinkedList, sysAdminLinkedList);
 
        return g;
+
+    }
+
+    protected static void fillingTheCollectionItems() throws Exception {
+        TreeMap<Integer, String> buffer = new TreeMap<Integer, String>();
+        HashMap<Integer, String> things = new HashMap<Integer, String>();
+        FileReader thingsFile = new FileReader("C://Users//Admin//IdeaProjects//apllicationJava//items//items.txt");
+        Scanner scanThings = new Scanner(thingsFile);
+
+        int i = 0, j = 0, count = 1;
+
+        while (scanThings.hasNextLine())
+                buffer.put(++i, scanThings.nextLine());
+
+        for (Map.Entry<Integer, String> x : buffer.entrySet()){
+           switch (count){
+               case 1:
+                   things.put(++j, x.getValue());
+                   break;
+               case 2:
+                   things.put(++j, x.getValue());
+                   break;
+               case 3:
+                   things.put(++j, x.getValue());
+                   break;
+               case 4:
+                   things.put(++j, x.getValue());
+                   break;
+               case 5:
+                   things.put(++j, x.getValue());
+                   break;
+               case 6:
+                   count = 0;
+                   break;
+           }
+           count++;
+        }
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("ENTER ID: ");
+        String foo = in.nextLine();
+
+        int goo = 0;
+
+        for (Map.Entry<Integer, String> u : things.entrySet()){
+            if (u.getValue().equals(foo)){
+                goo = u.getKey();
+            }
+        }
+        int hoo = goo + 5;
+
+        for (int a = goo; a < goo + 5; a++)
+            System.out.println(things.get(a));
+
+
+
+
 
     }
 

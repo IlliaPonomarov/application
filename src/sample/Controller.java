@@ -1,28 +1,13 @@
 package sample;
 
-import javafx.application.Application;
-import javafx.collections.transformation.TransformationList;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.Group;
 import javafx.scene.control.Button;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.*;
 
 
 import javafx.fxml.FXML;
 
-import javax.swing.*;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.Position;
-import javax.swing.text.View;
-import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -44,11 +29,8 @@ public class Controller {
 
     //Back Button (List of Items and Supplier
 
-    @FXML
-    Button btnBackList = new Button();
-    Button btnBackAdd = new Button();
+  @FXML
     Button btnBackRemove = new Button();
-    Button btnBackChange = new Button();
 
     // Authorization Button
 
@@ -67,18 +49,7 @@ public class Controller {
 
     //  Menu Button
 
-    @FXML
-    Button btnListUser = new Button();
-    @FXML
-    Button btnListAdmin = new Button();
-    @FXML
-    Button btnListSysAdmin = new Button();
 
-
-    @FXML
-    Button btnAddUser = new Button();
-    Button btnAddAdmin = new Button();
-    Button btnAddSysAdmin = new Button();
 
     @FXML
     Button btnRemoveUser = new Button();
@@ -133,6 +104,23 @@ public class Controller {
     //---------------------------------------------------------------------
     //                      MAIN BUTTON (LIST)
     //---------------------------------------------------------------------
+    @FXML
+    Button btnListUser = new Button();
+    @FXML
+    Button btnListAdmin = new Button();
+    @FXML
+    Button btnListSysAdmin = new Button();
+
+    @FXML
+    Button btnBackList = new Button();
+
+
+    @FXML
+    Button btnOkListOfUser = new Button();
+    @FXML
+    Button btnOkListOfAdmin = new Button();
+    @FXML
+    Button btnOkListOfSysAd = new Button();
 
 
     public void clickListUser(){
@@ -143,7 +131,6 @@ public class Controller {
             ((Node) (event.getSource())).getScene().getWindow().hide();
         });
     }
-
     public void clickListAdmin(){
 
         btnListAdmin.setOnAction(event -> {
@@ -160,6 +147,104 @@ public class Controller {
             ((Node) (event.getSource())).getScene().getWindow().hide();
         });
     }
+
+
+    public void clickBackUserListof(){
+
+        btnBackList.setOnAction(event -> {
+            view.meniUser();
+
+            ((Node) (event.getSource())).getScene().getWindow().hide();
+        });
+    }
+    public void clickBackAdminListof(){
+
+        btnBackList.setOnAction(event -> {
+            view.menuAdmin();
+
+            ((Node) (event.getSource())).getScene().getWindow().hide();
+        });
+    }
+    public void clickBackSysAdminListof(){
+
+        btnBackList.setOnAction(event -> {
+            view.menuSystemAdmin();
+
+            ((Node) (event.getSource())).getScene().getWindow().hide();
+        });
+    }
+
+    public void clickOkListOfAdmin(){
+        btnOkListOfAdmin.setOnAction(er->{
+            try {
+                Model.fillingTheCollectionItems();
+                System.out.println("Admin");
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+    }
+    public void clickOkListOfUser(){
+        btnOkListOfUser.setOnAction(ee->{
+            try {
+                Model.fillingTheCollectionItems();
+                System.out.println("User");
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+    }
+    public void clickOkListOfSysAdmin(){
+        btnOkListOfSysAd.setOnAction(et->{
+            try {
+                Model.fillingTheCollectionItems();
+                System.out.println("Sys Admin");
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        });
+    }
+
+    //---------------------------------------------------------------------
+    //                      MAIN BUTTON (ADD Items / Supplier)
+    //---------------------------------------------------------------------
+    @FXML
+    Button btnAddUser = new Button();
+    @FXML
+    Button btnAddAdmin = new Button();
+    @FXML
+    Button btnAddSysAdmin = new Button();
+
+    @FXML
+    Button btnBackAdd = new Button();
+    public void addItemsSupplierUser(){}
+    public void addItemsSupplierAdmin(){}
+    public void addItemsSupplierSysAdmin(){}
+
+    public void  clickBackSysAdminAdd(){}
+    public void  clickBackAdminAdd(){}
+    public void  clickBackUserAdd(){}
+
+    //---------------------------------------------------------------------
+    //                      MAIN BUTTON (CHANGE Items / Supplier)
+    //---------------------------------------------------------------------
+    @FXML
+    Button btnChangeUser = new Button();
+    @FXML
+    Button btnChangeAdmin = new Button();
+    @FXML
+    Button btnChangeSysAdmin = new Button();
+
+    @FXML
+    Button btnBackChange = new Button();
+    public void changeItemsSupplierUser(){}
+    public void changeItemsSupplierAdmin(){}
+    public void changeItemsSupplierSysAdmin(){}
+
+    public void  clickBackSysAdminChange(){}
+    public void  clickBackAdminChange(){}
+    public void  clickBackUserChange(){}
+
     //---------------------------------------------------------------------
     //                      BACK BUTTON
     //---------------------------------------------------------------------
@@ -196,30 +281,7 @@ public class Controller {
         });
     }
 
-    public void clickBackUserListof(){
 
-        btnBackList.setOnAction(event -> {
-            view.meniUser();
-
-            ((Node) (event.getSource())).getScene().getWindow().hide();
-        });
-    }
-    public void clickBackAdminListof(){
-
-        btnBackList.setOnAction(event -> {
-            view.menuAdmin();
-
-            ((Node) (event.getSource())).getScene().getWindow().hide();
-        });
-    }
-    public void clickBackSysAdminListof(){
-
-        btnBackList.setOnAction(event -> {
-            view.menuSystemAdmin();
-
-            ((Node) (event.getSource())).getScene().getWindow().hide();
-        });
-    }
 
     //---------------------------------------------------------------------
     //                      ACCESS LEVEL CHECK
