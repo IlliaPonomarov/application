@@ -19,7 +19,7 @@
                </font>
             </Text>
             <Button fx:id="btnSignOutUser" layoutX="1095.0" layoutY="38.0" mnemonicParsing="false" onAction="#clickUser" style="-fx-background-color: white; -fx-border-color: black;" text="Sign Out" />
-            <Line endX="100.0" endY="-1.0" fill="BLACK" layoutX="169.0" layoutY="28.0" startX="100.0" startY="978.0" strokeWidth="2.0" />
+            <Line endX="100.0" endY="-1.0" fill="BLACK" layoutX="177.0" layoutY="29.0" startX="100.0" startY="978.0" strokeWidth="2.0" />
             <Line endX="263.5" endY="122.0" layoutX="193.0" layoutY="159.0" startX="263.5" startY="215.0" />
             <Line endX="263.5" endY="142.0" layoutX="192.0" layoutY="267.0" startX="263.5" startY="232.0" />
             <Line endX="376.0" endY="232.0" layoutX="192.0" layoutY="266.0" startX="263.5" startY="232.0" strokeWidth="1.5" />
@@ -47,11 +47,7 @@
                   </Menu>
                </menus>
             </MenuBar>
-            <Button layoutX="6.0" layoutY="258.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="262.0" style="-fx-background-color: white; -fx-border-color: black;" text="List of items">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font></Button>
-            <Button layoutX="6.0" layoutY="325.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="262.0" style="-fx-background-color: white; -fx-border-color: black;" text="Supplier List">
+            <Button layoutX="6.0" layoutY="258.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="270.0" style="-fx-background-color: white; -fx-border-color: black;" text="List of items / Supplier">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Button>
@@ -63,6 +59,16 @@
             <Text layoutX="6.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item/ Supplier management" textAlignment="CENTER" wrappingWidth="262.0">
                <font>
                   <Font name="Calibri Bold Italic" size="17.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User/Admin/SysAdmin management" textAlignment="CENTER" wrappingWidth="262.0">
+               <font>
+                  <Font name="Calibri Bold Italic" size="17.0" />
+               </font>
+            </Text>
+            <Text layoutX="41.0" layoutY="597.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You don't have access" textAlignment="CENTER" underline="true" wrappingWidth="201.0">
+               <font>
+                  <Font name="Corbel Light" size="17.0" />
                </font>
             </Text>
          </children>

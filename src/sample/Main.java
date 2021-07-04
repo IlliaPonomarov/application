@@ -40,21 +40,6 @@ public class Main extends Application {
         Model model = new Model() ;
         Controller check = new Controller();
 
-//
-//
-//        switch (check.levelAccess){
-//            case 0:
-//                System.out.println("Why here error :(");
-//            case 1:
-//                System.out.println("Hi System Admin");
-//                break;
-//            case 2:
-//                System.out.println("Hi Admin");
-//                break;
-//            case 3:
-//                System.out.println("Hi User");
-//                break;
-//        }
 
        Application.launch(args);
     }

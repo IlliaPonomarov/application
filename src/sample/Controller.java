@@ -81,11 +81,6 @@ public class Controller {
     Button sysBtnRemove= new Button();
     Button sysBtnChange = new Button();
 
-
-
-
-
-
     //---------------------------------------------------------------------
     //                  AUTHORIZATION
     //---------------------------------------------------------------------
@@ -123,7 +118,6 @@ public class Controller {
 
     }
 
-
     //---------------------------------------------------------------------
     //                      MAIN BUTTON (LIST)
     //---------------------------------------------------------------------
@@ -153,7 +147,6 @@ public class Controller {
             }
         });
     }
-
     public void clickBackAdmin(){
         btnSignOutAdmin.setOnAction(e2 ->{
             try {
@@ -164,8 +157,6 @@ public class Controller {
             }
         });
     }
-
-
     public void  clickUser(){
         btnSignOutUser.setOnAction(e3 -> {
             try {

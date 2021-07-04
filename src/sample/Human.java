@@ -1,19 +1,16 @@
 package sample;
 
-interface AccessLevel {
-    public byte getAccessLevel();
-}
 
-abstract class Person{
+abstract class Human {
     private String name;
     private String surname;
     private String login;
     private String password;
 
-    public Person() {
+    public Human() {
     }
 
-    public Person(String name, String surname, String login, String password) {
+    public Human(String name, String surname, String login, String password) {
         this.name = name;
         this.surname = surname;
         this.login = login;
@@ -52,7 +49,15 @@ abstract class Person{
         this.password = password;
     }
 }
-public class User extends Person implements AccessLevel {
+
+
+
+interface AccessLevel {
+    public byte getAccessLevel();
+}
+
+
+class User extends Human implements AccessLevel {
 
     public User() {
     }
@@ -69,10 +74,7 @@ public class User extends Person implements AccessLevel {
 }
 
 
-
-
-
-class Admin extends Person implements AccessLevel{
+class Admin extends Human implements AccessLevel{
 
     private final byte accessLevel = 2;
 
@@ -90,7 +92,7 @@ class Admin extends Person implements AccessLevel{
 }
 
 
-class SysAdmin extends Person implements AccessLevel{
+class SysAdmin extends Human implements AccessLevel{
 
     public SysAdmin(){}
 
