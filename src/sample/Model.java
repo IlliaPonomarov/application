@@ -1,10 +1,10 @@
 package sample;
 
-import sun.reflect.generics.tree.Tree;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.*;
+import  java.lang.*;
+
 
 public class Model {
 
@@ -57,57 +57,140 @@ public class Model {
 
     protected static void fillingTheCollectionItems() throws Exception {
         TreeMap<Integer, String> buffer = new TreeMap<Integer, String>();
-        HashMap<Integer, String> things = new HashMap<Integer, String>();
+        TreeMap<Integer, String> buffer2 = new TreeMap<Integer, String>();
+        List<Object> suppliers = new ArrayList<Object>();
+        List<Object> things = new ArrayList<Object>();
+        List<Things> things1 = new ArrayList<Things>();
+
         FileReader thingsFile = new FileReader("C://Users//Admin//IdeaProjects//apllicationJava//items//items.txt");
         Scanner scanThings = new Scanner(thingsFile);
 
-        int i = 0, j = 0, count = 1;
+        FileReader suppliersFile = new FileReader("C://Users//Admin//IdeaProjects//apllicationJava//items//supplier.txt");
+        Scanner scanSuppliers = new Scanner(suppliersFile);
+
+        int i = 0, j = 0, count = 1, count2  = 1;
 
         while (scanThings.hasNextLine())
                 buffer.put(++i, scanThings.nextLine());
 
-        for (Map.Entry<Integer, String> x : buffer.entrySet()){
-           switch (count){
-               case 1:
-                   things.put(++j, x.getValue());
-                   break;
-               case 2:
-                   things.put(++j, x.getValue());
-                   break;
-               case 3:
-                   things.put(++j, x.getValue());
-                   break;
-               case 4:
-                   things.put(++j, x.getValue());
-                   break;
-               case 5:
-                   things.put(++j, x.getValue());
-                   break;
-               case 6:
-                   count = 0;
-                   break;
-           }
-           count++;
-        }
+        i = 0;
+        while (scanSuppliers.hasNextLine())
+            buffer2.put(++i, scanSuppliers.nextLine());
 
-        Scanner in = new Scanner(System.in);
-        System.out.println("ENTER ID: ");
-        String foo = in.nextLine();
+//        for (Map.Entry<Integer, String> pu : buffer2.entrySet())
+//            System.out.println(pu.getKey() + "\t" + pu.getValue());
 
-        int goo = 0;
 
-        for (Map.Entry<Integer, String> u : things.entrySet()){
-            if (u.getValue().equals(foo)){
-                goo = u.getKey();
+        List<String> id= new ArrayList<String>();
+        List<String> product = new ArrayList<String>();
+        List<Integer> quantity = new ArrayList<Integer>();
+        List<Float> price = new ArrayList<Float>();
+        List<Float> weight = new ArrayList<Float>();
+
+
+        List<String> idS= new ArrayList<String>();
+        List<String> name = new ArrayList<String>();
+        List<String> adress = new ArrayList<String>();
+        List<String> phone_number = new ArrayList<String>();
+
+       System.out.println(buffer.size());
+       System.out.println(buffer2.size());
+
+
+        for (Map.Entry<Integer, String> y : buffer2.entrySet()) {
+            switch (count2) {
+                case 1:
+                    suppliers.add(y.getValue());
+                    break;
+                case 2:
+                    suppliers.add(y.getValue());
+                    break;
+                case 3:
+                    suppliers.add(y.getValue());
+                    break;
+                case 4:
+                    suppliers.add(y.getValue());
+                    break;
+                case 5:
+                    count2 = 0;
+                    break;
             }
+            count2++;
         }
-        int hoo = goo + 5;
 
-        for (int a = goo; a < goo + 5; a++)
-            System.out.println(things.get(a));
+        for (Map.Entry<Integer, String> x : buffer.entrySet()) {
+            switch (count) {
+                case 1:
+                    things.add(x.getValue());
+                    break;
+                case 2:
+                    things.add(x.getValue());
+
+                    break;
+                case 3:
+                   things.add(Integer.parseInt(x.getValue()));
+                    break;
+                case 4:
+                   things.add(Float.parseFloat(x.getValue()));
+
+                    break;
+                case 5:
+                    things.add(Float.parseFloat(x.getValue()));
+                    break;
+                case 6:
+                    count = 0;
+                    break;
+            }
+            count++;
+        }
+
+        String idV = "";
+        String productV = "";
+        int quantityV = 0;
+        float priceV = 0;
+        float weightV = 0;
+
+        String nameV = "";
+        String surnameV = "";
+        String adressV = "";
+        String phone_numberV = "";
+
+        System.out.println("SupSize: " + suppliers.size());
+        System.out.println("ThSize: " + things.size());
+
+        Object[] thinngsArray = new Object[things.size()];
+        Object[] suplArray = new Object[suppliers.size()];
+
+        things.toArray(thinngsArray);
+        suppliers.toArray(suplArray);
+
+        int index_1 = 0;
+        int index_2 = 0;
+        int cnt = 1;
+
+        Object[] sup_things = new Object[thinngsArray.length + suplArray.length];
+
+       for (int index = 0; index <  suplArray.length; index++) {
+
+          System.out.println(index + "\t" + suplArray[index]);
+
+       }
+        System.out.println();
+
+       for (int index_4 = 0; index_4 < thinngsArray.length; index_4++){
+
+          System.out.println(index_4 + "\t" + thinngsArray[index_4]);
+
+       }
 
 
+       for (int index_3 = 0; index_3 < suplArray.length; index_3++){
+          sup_things[index_3] = suplArray[index_3];
+       }
 
+        System.out.println("\n\n\nNext:\n");
+       for (Things thn : things1)
+           System.out.println(thn.toString());
 
 
     }
